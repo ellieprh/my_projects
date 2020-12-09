@@ -7,9 +7,21 @@ Original file is located at
     https://colab.research.google.com/drive/1lDIaqeTpakupCJIDccQ4Gh-WXZ4UOkZz
 """
 
+'''This is a geometric calculater class. There are multiple different formulas that you can use. 
+  To use a formula first type the name of the class that you would like to access. There are 3 classes; Rectangle, Triangle, and Circle. 
+  To initilize use this code: 
+  f1 = Circle(1, 2)
+print(f1.right_circular_cylindar())
+
+Here you can see I specified which class to (Cirlce) and then put the values I wanted to use in parentheses next to it(1, 2). 
+Then I asked it to print the solution using f1.right_circular_cylindar, the shape I wanted the computer to solve. 
+Here is another example using the class Rectangle
+f1 = Rectangle(2)
+print(f1.square())'''
+
 class Rectangle():
     
-  def __init__(self, length, width, height):
+  def __init__(self, length, width=1, height=1):
     self.length = length
     self.width = width
     self.height = height
@@ -17,34 +29,37 @@ class Rectangle():
   def square(self):
     area_square = self.length ** 2
     perimeter_square = self.length * 4
-    return f'The perimeter is {perimeter_square}', f'The area is {area_square}'
+    return f'The perimeter is {perimeter_square}, and the formula is length*4.', f'The area is {area_square} and the formula is length**2.'
     
   def rectangle(self):
     area_rectangle = self.length * self.width 
     perimeter_rectangle = (self.length * 2) + (self.width * 2)
-    return f' The area is {area_rectangle}', f'The perimeter is {perimeter_rectangle}'
+    return f' The area is {area_rectangle} and the formula is length * width.', f'The perimeter is {perimeter_rectangle} and the formula is length*2 + width*2.'
 
   def cube(self):
     volume_cube = self.length ** 3
     surface_area_cube = (self.length **2) * 6
-    return f'The volume is {volume_cube}', f'The surface area is {surface_area_cube}' 
+    return f'The volume is {volume_cube} and the formula is length**2', f'The surface area is {surface_area_cube} and the formula is length**2 *6.' 
 
   def rect_prism(self):
     volume_rect_prism = self.length * self.height * self.width
     surface_area_rect_prism = 2 * (self.length * self.width + self.length * self.height + self.height * self.width)
-    return f'The volume is {volume_rect_prism}', f'The surface area is {surface_area_rect_prism}'
+    return f'The volume is {volume_rect_prism} and the formula is length*height*width', f'The surface area is {surface_area_rect_prism} and the formula is 2 * (length*width + length*height + height*width)'
 
   def parallelogram(self):
     area_parallelogram = self.length * self.height
     perimeter_parallelogram = (self.length * 2) + (self.width * 2)
-    return f' The area is {area_parallelogram}' , f'The perimeter is {perimeter_parallelogram}'
+    return f' The area is {area_parallelogram} and the ' , f'The perimeter is {perimeter_parallelogram}'
 
   def rect_pryramid(self):
     volume_rect_pryramid = (self.length * self.height * self.width) / 3
     return f' The volume is {volume_rect_pryramid}'
 
+f1 = Rectangle(2)
+print(f1.square())
+
 class Triangle():  
-  def __init__(self, height, base):
+  def __init__(self, height, base, base2=1, side1=1, side2=1):
     self.height = height
     self.base = base
   
@@ -52,10 +67,13 @@ class Triangle():
     area_triangle = self.height * self.base * 0.5
     return f'the area is {area_t}'
   
-  def trapezoid (self, base2, side1, side2):
+  def trapezoid (self):
     area_trapezoid = 0.5 * self.height * (self.base + base2 )
     perimeter_trapezoid = side1 + side2 + self.base + base2
     return f'The area is {area_trapezoid}' , f'The perimeter is {perimeter_trapezoid}'
+
+f2= Triangle(1, 2)
+print(f2.)
 
 import numpy as np
 class Circle():
